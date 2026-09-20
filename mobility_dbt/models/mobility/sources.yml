@@ -1,0 +1,8 @@
+version: 2
+
+sources:
+  - name: mobility
+    schema: public
+    tables:
+      - name: route_speed_metrics
+      - name: route_speed_history

@@ -1,0 +1,46 @@
+version: 2
+
+models:
+  - name: route_performance
+    description: "Performance des lignes à partir des événements de vitesse."
+
+    columns:
+      - name: route_id
+        description: "Identifiant de la ligne."
+        tests:
+          - not_null
+
+      - name: event_count
+        description: "Nombre d'événements observés."
+        tests:
+          - not_null
+
+      - name: avg_speed_kmh
+        description: "Vitesse moyenne de la ligne en km/h."
+        tests:
+          - not_null
+
+  - name: route_performance_summary
+    description: "Résumé de la performance des lignes."
+
+    columns:
+      - name: route_id
+        description: "Identifiant de la ligne."
+        tests:
+          - not_null
+          - unique
+
+      - name: total_events
+        description: "Nombre total d'événements."
+        tests:
+          - not_null
+
+      - name: avg_speed_kmh
+        description: "Vitesse moyenne de la ligne."
+        tests:
+          - not_null
+
+      - name: speed_category
+        description: "Catégorie de vitesse."
+        tests:
+          - not_null
